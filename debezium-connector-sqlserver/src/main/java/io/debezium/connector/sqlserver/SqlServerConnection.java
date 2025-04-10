@@ -130,7 +130,7 @@ public class SqlServerConnection extends JdbcConnection {
     private static final Field AGENT_STATUS_QUERY = Field.create("sqlserver.agent.status.query")
             .withDescription("Query to get the running status of the SQL Server Agent")
             .withDefault(
-                    "SELECT CASE WHEN dss.[status]=4 THEN 1 ELSE 0 END AS isRunning FROM [#db].sys.dm_server_services dss WHERE dss.[servicename] LIKE N'SQL Server-Agent (%';");
+                    "SELECT CASE WHEN dss.[status]=4 THEN 1 ELSE 0 END AS isRunning FROM [#db].sys.dm_server_services dss WHERE dss.[servicename] LIKE N'SQL Server_Agent (%';");
 
     /**
      * Creates a new connection using the supplied configuration.
